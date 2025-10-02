@@ -51,7 +51,10 @@ export default function ClientsSection() {
                     className="max-w-full max-h-full object-contain opacity-60 hover:opacity-80 transition-opacity duration-300 filter grayscale"
                     onError={(e) => {
                       e.currentTarget.style.display = 'none';
-                      e.currentTarget.nextElementSibling.style.display = 'block';
+                      const sibling = e.currentTarget.nextElementSibling as HTMLElement;
+                      if (sibling) {
+                        sibling.style.display = 'block';
+                      }
                     }}
                   />
                   <div className="text-center" style={{ display: 'none' }}>

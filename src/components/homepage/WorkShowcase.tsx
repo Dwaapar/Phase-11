@@ -73,7 +73,10 @@ export default function WorkShowcase() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   onError={(e) => {
                     e.currentTarget.style.display = 'none';
-                    e.currentTarget.nextElementSibling.style.display = 'flex';
+                    const sibling = e.currentTarget.nextElementSibling as HTMLElement;
+                    if (sibling) {
+                      sibling.style.display = 'flex';
+                    }
                   }}
                 />
                 <div className="w-full h-full flex items-center justify-center text-white" style={{ display: 'none' }}>

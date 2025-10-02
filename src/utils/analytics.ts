@@ -27,8 +27,8 @@ class Analytics {
     });
 
     // Example: Send to Google Analytics
-    if (typeof gtag !== 'undefined') {
-      gtag('event', event.name, event.properties);
+    if (typeof window !== 'undefined' && 'gtag' in window) {
+      (window as any).gtag('event', event.name, event.properties);
     }
   }
 

@@ -3,8 +3,7 @@ import { Terminal as TerminalIcon } from 'lucide-react';
 import { cn } from '../../lib/utils';
 
 interface TerminalLine {
-  type: 'command' | 'output' | '
-';
+  type: 'command' | 'output' | 'error';
   content: string;
   timestamp?: Date;
 }
